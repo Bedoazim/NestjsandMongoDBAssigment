@@ -15,12 +15,12 @@ export class RegisterInputDto {
 
     @IsNotEmpty({message : "You should send phone number"})
     @IsString({message : "You should send a valid format"})
-    @IsPhoneNumber('EG')
+    @Matches('^01[0125][0-9]{8}$')
     phoneNumber:string;
 
     @IsNotEmpty({message : "You should send password"})
     @IsString({message : "You should send a valid format"})
     @Length(8,255,{message: "Password can't be less than 8-digits"})
     password:string;
-
+    
 }

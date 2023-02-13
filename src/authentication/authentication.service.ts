@@ -11,7 +11,7 @@ export class AuthenticationService {
   }
 
   login(loginInputDto : LoginInputDto) : string {
-    const token = "";
+    const token = "toooken";
     return token;    
   }
 
