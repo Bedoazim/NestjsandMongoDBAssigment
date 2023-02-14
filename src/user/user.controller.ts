@@ -75,7 +75,7 @@ export class UserController {
     }
   }
 
-  @Get('getAddressBook')
+  @Post('getAddressBook')
   @HttpCode(HttpStatus.OK)
   @UsePipes(ValidationPipe)
   async getAddressBook(@Body() body: any,@Res() res) {
