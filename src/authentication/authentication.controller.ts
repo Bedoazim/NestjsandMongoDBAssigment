@@ -67,7 +67,6 @@ export class AuthenticationController {
       res
         .status(HttpStatus.INTERNAL_SERVER_ERROR)
         .send('Error in the database');
-        console.log(error);
     }
   }
 }
