@@ -4,17 +4,17 @@ import { IsEqualTo } from "src/isequalto.decorator";
 
 export class ChangeUserPasswordDto {
 
-    @IsNotEmpty({message : "You should send old password"})
+    @IsNotEmpty()
+    @IsString()
     oldPassword:string;
 
-    @IsNotEmpty({message : "You should send new password"})
-    @IsString({message : "You should send a valid format"})
-    @Length(8,255,{message: "Password can't be less than 8-characters"})
+    @IsNotEmpty()
+    @IsString()
+    @Length(8,255,)
     newPassword:string;
 
-    @IsNotEmpty({message : "You should send new password"})
-    @IsString({message : "You should send a valid format"})
-    @Length(8,255,{message: "Password can't be less than 8-characters"})
+    @IsNotEmpty()
+    @IsString()
     @IsEqualTo('newPassword',{message: "Passwords don't match"})
     confirmNewPassword:string;
 

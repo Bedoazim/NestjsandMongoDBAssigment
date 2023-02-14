@@ -4,35 +4,35 @@ import { AddressBookEntry } from "../entities/addressBookEntry.entity";
 
 export class AddAddressBookEntryDto extends AddressBookEntry {
 
-    @IsNotEmpty({message : "You should send name"})
-    @IsString({message : "You should send a valid format"})
-    @Length(3,255,{message: "name can't be less than 2-letters"})
+    @IsNotEmpty()
+    @IsString()
+    @Length(3,255)
     @Matches('^[a-zA-Z\\s]+$')
     name:string;
 
-    @IsNotEmpty({message : "You should send phone number"})
-    @IsString({message : "You should send a valid format"})
+    @IsNotEmpty()
+    @IsString()
     @Matches('^01[0125][0-9]{8}$')
     phoneNumber:string;
 
 
-    @IsNotEmpty({message : "You should send city name"})
-    @IsString({message : "You should send a valid format"})
+    @IsNotEmpty()
+    @IsString()
     city: string;
 
-    @IsNotEmpty({message : "You should send city name"})
-    @IsString({message : "You should send a valid format"})
+    @IsNotEmpty()
+    @IsString()
     streetName: string;
 
-    @IsNotEmpty({message : "You should send building number"})
+    @IsNotEmpty()
     @IsNumber()
     building: number;
 
-    @IsNotEmpty({message : "You should send floor number"})
+    @IsNotEmpty()
     @IsNumber()
     floor: number;
 
-    @IsNotEmpty({message : "You should send apartment number"})
+    @IsNotEmpty()
     @IsNumber()
     apartment: number;
 

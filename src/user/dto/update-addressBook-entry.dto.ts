@@ -5,7 +5,7 @@ import { IsNotEmpty, IsString } from "class-validator";
 
 export class UpdateAddressBookEntryDto extends PartialType(AddAddressBookEntryDto) {
     
-    @IsNotEmpty({message : "You should send AddressId"})
-    @IsString({message : "You should send a valid format"})
+    @IsNotEmpty()
+    @IsString()
     addressId:string
 }

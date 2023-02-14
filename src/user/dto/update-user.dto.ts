@@ -5,7 +5,7 @@ import { CreateUserDto } from './create-user.dto';
 
 export class UpdateUserDto extends PartialType(CreateUserDto) {
 
-    @IsNotEmpty({message : "You should send password"})
+    @IsNotEmpty()
     password:string;
 
     addressBook:AddressBookEntry[];
