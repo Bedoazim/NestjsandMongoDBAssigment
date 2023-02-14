@@ -1,18 +1,25 @@
 import { Injectable } from '@nestjs/common';
-import { LoginInputDto } from './dto/loginInput.dto';
-import { RegisterInputDto } from './dto/registerInput.dto';
-
+import { UserRepository } from 'src/user/user.repository';
+import * as bcrypt from 'bcrypt';
+import { User } from 'src/user/entities/user.entity';
 
 @Injectable()
 export class AuthenticationService {
 
-  register(registerInputDto : RegisterInputDto) {
-    return;
-  }
+  constructor(private readonly userRepository: UserRepository) {}
 
-  login(loginInputDto : LoginInputDto) : string {
-    const token = "toooken";
-    return token;    
-  }
+  async checkUserAuthorityByEmail(
+    email: string,
+    password: string,
+  ): Promise<User> | null {
+    const user = await this.userRepository.findOne({
+      email: email,
+    });
+    
+    if (user == null || !(await bcrypt.compare(password, user.password))) {
+      return null;
+    }
 
+    return user;
+  }
 }
