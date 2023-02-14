@@ -2,5 +2,9 @@ node_modules
 .prettierrc
 .eslintrc.js
 dist
-package-lock.json
+./package-lock.json
+./package.json
 package.json
+dist/tsconfig.build.tsbuildinfo
+package-lock.json
+*.map
